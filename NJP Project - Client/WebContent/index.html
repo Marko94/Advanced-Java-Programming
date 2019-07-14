@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html ng-app="njpproject">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Rent a car</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js">
+    </script>
+	<script src="main.js"></script>
+</head>
+<body>
+	 <div ng-controller="loginCtrl">
+			<a ng-click="showLoginForm = !showLoginForm" href="#">Login</a>
+			<div class="loginForm" ng-show="showLoginForm">
+				<form novalidate>
+				    Username:<br />
+				    <input type="text" ng-model="user.username"><br />
+				    Password:<br />
+				    <input type="text" ng-model="user.password"><br />
+				    <br /><br />
+				    <button ng-click="login(user)">Login</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validateLogin}}</div>
+			<br/>
+			<button ng-show="showLogoutBtn" ng-click="logout()">Log out</button> 
+	</div>
+	
+	 <div ng-controller="registerCtrl">
+			<a ng-click="showForm = !showForm" href="#">Register</a>
+			<div class="registerForm" ng-show="showForm">
+				<form novalidate>
+				    Username:<br />
+				    <input type="text" ng-model="user.username"><br />
+				    Password:<br />
+				    <input type="text" ng-model="user.password"><br />
+				    <br /><br />
+				    <button ng-click="register(user)">Register</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	
+	<div ng-controller="addCarCtrl">
+			<a ng-click="showForm = !showForm" href="#">Add car</a>
+			<div class="addCarForm" ng-show="showForm">
+				<form novalidate>
+				    Plate number:<br />
+				    <input type="text" ng-model="car.plate"><br />
+				    Category:<br />
+				    <select name="category list" ng-model="car.category">
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="5">5</option>
+					</select>
+				    <br /><br />
+				    <button ng-click="addCar(car)">Add car</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	
+		<div ng-controller="removeCarCtrl">
+			<a ng-click="showForm = !showForm" href="#">Remove car</a>
+			<div class="removeCarForm" ng-show="showForm">
+				<form novalidate>
+				    Plate number:<br />
+				    <input type="text" ng-model="car.plate"><br />
+				    <br /><br />
+				    <button ng-click="removeCar(car)">Remove car</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="listCarCtrl">
+			<a ng-click="showForm = !showForm" href="#">List cars</a>
+			<div class="listCarForm" ng-show="showForm">
+				<form novalidate>
+				    <button ng-click="listCar()">List cars</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="viewCarCtrl">
+			<a ng-click="showForm = !showForm" href="#">View car</a>
+			<div class="viewCarForm" ng-show="showForm">
+				<form novalidate>
+				    Plate number:<br />
+				    <input type="text" ng-model="car.plate"><br />
+				    <br /><br />
+				    <button ng-click="viewCar(car)">View car</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="addCustomerCtrl">
+			<a ng-click="showForm = !showForm" href="#">Add customer</a>
+			<div class="addCustomerForm" ng-show="showForm">
+				<form novalidate>
+				    JMBG number:<br />
+				    <input type="text" ng-model="customer.jmbg"><br />
+				    Category:<br />
+				    <select name="category list" ng-model="customer.category">
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="5">5</option>
+					</select>
+				    <br /><br />
+				    <button ng-click="addCustomer(customer)">Add customer</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	
+		<div ng-controller="removeCustomerCtrl">
+			<a ng-click="showForm = !showForm" href="#">Remove customer</a>
+			<div class="removeCustomerForm" ng-show="showForm">
+				<form novalidate>
+				    JMBG number:<br />
+				    <input type="text" ng-model="customer.jmbg"><br />
+				    <br /><br />
+				    <button ng-click="removeCustomer(customer)">Remove customer</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="listCustomerCtrl">
+			<a ng-click="showForm = !showForm" href="#">List customers</a>
+			<div class="listCustomerForm" ng-show="showForm">
+				<form novalidate>
+				    <button ng-click="listCustomer()">List customers</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="viewCustomerCtrl">
+			<a ng-click="showForm = !showForm" href="#">View customer</a>
+			<div class="viewCustomerForm" ng-show="showForm">
+				<form novalidate>
+				    JMBG number:<br />
+				    <input type="text" ng-model="customer.jmbg"><br />
+				    <br /><br />
+				    <button ng-click="viewCustomer(customer)">View customer</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="rentCarCtrl">
+			<a ng-click="showForm = !showForm" href="#">Rent car</a>
+			<div class="rentCarForm" ng-show="showForm">
+				<form novalidate>
+				    Plate number:<br />
+				    <input type="text" ng-model="plate"><br />
+				    JMBG number:<br />
+				    <input type="text" ng-model="jmbg"><br />
+				    <br /><br />
+				    <button ng-click="rentCar(plate, jmbg)">Rent car</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+	<div ng-controller="returnCarCtrl">
+			<a ng-click="showForm = !showForm" href="#">Return car</a>
+			<div class="returnCarForm" ng-show="showForm">
+				<form novalidate>
+				    Plate number:<br />
+				    <input type="text" ng-model="plate"><br />
+				    JMBG number:<br />
+				    <input type="text" ng-model="jmbg"><br />
+				    <br /><br />
+				    <button ng-click="returnCar(plate, jmbg)">Return car</button>
+			    </form>
+			</div>
+			<br/>
+			<div>{{validate}}</div>
+			<br/>
+	</div>
+</body>
+</html>
